@@ -56,7 +56,7 @@ class RMPSchool:
         self.driver = webdriver.Chrome(options=self.options) # Instantiate the webdriver object with the options
         self.driver.get(self.rmp_professors_endpoint)        # Load the RMP professors search page
         
-        # Set attributes for the School
+        # Set attributes for the school
         self.school_name = self.get_school_name()
         self.num_professors = self.get_num_professors()
         self.professors_list = []
@@ -79,7 +79,7 @@ class RMPSchool:
         :returns school_name (str): The full school name corresponding to the SID.
         """
         Xpath = '//*[@id="root"]/div/div/div[4]/div[1]/div[1]/div[1]/div/h1/span/b'  # RMP error message Xpath
-        school_name_element = self.driver.find_element(by=By.XPATH, value=Xpath)  # Find the error message element'
+        school_name_element = self.driver.find_element(by=By.XPATH, value=Xpath)  # Find the error message element
         school_name = school_name_element.text.strip()
         return school_name
 
